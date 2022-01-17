@@ -16,18 +16,18 @@ const https_or_not = DOMAIN_FE[4]=='s'? 'https' : 'http';
 
 var app = express();
 
-const server = require(https_or_not).createServer(app);
-console.log("https_or_not", https_or_not);
-const io = require("socket.io")(server, {
-  cors: {
-    origin: DOMAIN_FE.substring(0, DOMAIN_FE.length - 1),
-    methods: ["GET", "POST", "PUT", "PATCH"],
-    allowedHeaders: ['x-access-token'],
-    credentials: true
-  }
-});
-require('./socket/index')(io);
-server.listen(5000);
+// const server = require(https_or_not).createServer(app);
+// console.log("https_or_not", https_or_not);
+// const io = require("socket.io")(server, {
+//   cors: {
+//     origin: DOMAIN_FE.substring(0, DOMAIN_FE.length - 1),
+//     methods: ["GET", "POST", "PUT", "PATCH"],
+//     allowedHeaders: ['x-access-token'],
+//     credentials: true
+//   }
+// });
+// require('./socket/index')(io);
+// server.listen(5000);
 
 console.log('process.env.PORT', process.env.PORT);
 // const io_router = require('./socket/index')(io);
