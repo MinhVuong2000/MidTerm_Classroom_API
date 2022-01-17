@@ -50,7 +50,6 @@ module.exports = {
         item.student = await users_db.oneIDUni(items[0].id_user_uni, false);
         item.assignment = await assignments_db.one(items[0].id_assignment);
         item.class = await classes_db.one(items[0].id_class, items[0].id_user_uni);
-        console.log(item.student);
         return item;
     },
     async findReviewByIDClass(id_class){

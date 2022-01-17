@@ -245,6 +245,7 @@ router.post('/teachernews', async function(req, res){
     if (review == null){
         return res.json([]);
     }
+    await review.sort((firstItem, secondItem) => secondItem.id_review - firstItem.id_review);
     res.json(review);
 });
 
@@ -288,6 +289,7 @@ router.post('/addreview', async function(req, res){
     if (review == null){
         return res.json([]);
     }
+    await review.sort((firstItem, secondItem) => secondItem.review.id - firstItem.review.id);
     res.json(review);
 });
 
