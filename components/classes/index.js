@@ -68,6 +68,7 @@ router.post('/', async function(req, res, next){
 router.use('/detail/:id', AuthMiddleWare.isAuthen, detail_class)
 
 router.get('/inviteclass/:link', async function(req, res, next) {
+    if(req.jwtDecoded){
         const linkclass = await encodeURI(req.params.link);
         console.log("link class",linkclass);
 
@@ -103,7 +104,10 @@ router.get('/inviteclass/:link', async function(req, res, next) {
         }
         const items = await classed_db.one(codeitem, req.jwtDecoded.data.id_uni);
         return res.json(items);
-    
+    }
+    else{
+        return res.json(null);
+    }
 });
 
 router.post('/sendinvite/:classlink', async function(req, res, next){
