@@ -47,7 +47,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 //   credentials: true, 
 //   origin: DOMAIN_FE.substring(0, DOMAIN_FE.length - 1)
 // }));
-app.use(cors());
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
 
 app.use('/', authen_author);
 app.use(AuthMiddleWare.isAuthor);
