@@ -10,7 +10,9 @@ module.exports = {
             items[i].class_name = _class.class_name;
             items[i].create_time = moment(items[i].create_time).format("DD/MM/YYYY HH:mm:ss");
         }
-        return items;
+        if (items.length===0)
+            return items;
+        return items.reverse();
     },
 
     async one(id){
