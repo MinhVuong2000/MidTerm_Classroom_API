@@ -112,7 +112,7 @@ INSERT INTO users OVERRIDING SYSTEM VALUE VALUES (3, 'Nguyễn Thị Minh Vượ
 INSERT INTO users OVERRIDING SYSTEM VALUE VALUES (4, 'Lê Thị Tuyết Trinh', 'trinh_312', '$2a$10$ij.inENEdLH4K52o/c1bKec3dXDdHybpxdVcEH6bCK8W8ygi866L.', '312', NULL, 'email4@gmail.com', NULL,'2022-01-15 14:29:22.554', -1);
 COMMIT;
 BEGIN;
-INSERT INTO admins OVERRIDING SYSTEM VALUE VALUES (1, 'Nguyễn Văn Admin', 'a_admin', '$2a$10$ij.inENEdLH4K52o/c1bKec3dXDdHybpxdVcEH6bCK8W8ygi866L.', '1', 'emailadmin@gmail.com', NULL,  -1);
+INSERT INTO admins OVERRIDING SYSTEM VALUE VALUES (1, 'Nguyễn Văn Admin', 'a_admin', '$2a$10$ij.inENEdLH4K52o/c1bKec3dXDdHybpxdVcEH6bCK8W8ygi866L.', '1', 'emailadmin@gmail.com', '2022-01-15 14:29:22.554',  -1);
 COMMIT;
 -- ----------------------------
 -- Table structure for assignments
@@ -155,6 +155,9 @@ COMMIT;
 -- Records of user_assignments
 -- ----------------------------
 BEGIN;
+INSERT INTO user_assignments OVERRIDING SYSTEM VALUE VALUES (124, 1, 1, 9);
+INSERT INTO user_assignments OVERRIDING SYSTEM VALUE VALUES (111, 1, 1, 8);
+INSERT INTO user_assignments OVERRIDING SYSTEM VALUE VALUES (321, 5, 3, 9);
 INSERT INTO user_assignments OVERRIDING SYSTEM VALUE VALUES (123, 3, 3, 8);
 INSERT INTO user_assignments OVERRIDING SYSTEM VALUE VALUES (321, 3, 3, 7);
 INSERT INTO user_assignments OVERRIDING SYSTEM VALUE VALUES (123, 4, 3, 4);
